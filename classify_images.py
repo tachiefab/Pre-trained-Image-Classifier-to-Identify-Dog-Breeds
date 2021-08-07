@@ -68,9 +68,10 @@ def classify_images(images_dir, results_dic, model):
 
     for key in results_dic:
         model_label = ""
-        classified = classifier(images_dir+'/'+key,model)
+        # classified = classifier(images_dir+'/'+key,model)
+        model_label = classifier(images_dir+key, model)
 
-        low_pet_image = classified.lower()
+        low_pet_image = model_label.lower()
         
 
         word_list_pet_image = low_pet_image
